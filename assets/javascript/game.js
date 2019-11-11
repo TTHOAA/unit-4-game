@@ -20,7 +20,7 @@ let c1;
 let c2;
 let c3;
 let c4;
-function randomizeCrystals(){
+function randomizeCrystals(){ //function assigns each crystal a random value from 1 to 12
     c1= Math.floor((Math.random()*12)+1);
     c2= Math.floor((Math.random()*12)+1);
     c3= Math.floor((Math.random()*12)+1);
@@ -33,33 +33,94 @@ randomizeCrystals();
 let currentNumber = 0;
 $('#current').text(currentNumber);
 $('#c1').on('click', () => {
-    currentNumber = currentNumber+c1;
-    $('#current').text(currentNumber);
+    currentNumber = currentNumber+c1; //adds crystals value to current total
+    $('#current').text(currentNumber); //displays new current total
+    if (currentNumber == luckyNumber){ //if current total equals the lucky number then a win will be rcorded and all new random values will be produced to begin a new round
+        victories=victories+1;
+        $('#wins').text('Wins: '+victories);
+        currentNumber=0;
+        $('#current').text(currentNumber);
+        createLuckyNumber(19,120);
+        randomizeCrystals();
+    }
+    
+    else if(currentNumber > luckyNumber){ //if the current total exceeds the lucky number then a new game with new values will start and a loss will be recorded
+        defeats = defeats+1;
+        $('#losses').text('Losses: '+defeats);
+        currentNumber=0;
+        $('#current').text(currentNumber);
+        createLuckyNumber(19,120);
+        randomizeCrystals();
+    }
 })
 
 $('#c2').on('click', () => {
     currentNumber = currentNumber+c2;
     $('#current').text(currentNumber);
+    if (currentNumber == luckyNumber){
+        victories=victories+1;
+        $('#wins').text('Wins: '+victories);
+        currentNumber=0;
+        $('#current').text(currentNumber);
+        createLuckyNumber(19,120);
+        randomizeCrystals();
+    }
+    
+    else if(currentNumber > luckyNumber){
+        defeats = defeats+1;
+        $('#losses').text('Losses: '+defeats);
+        currentNumber=0;
+        $('#current').text(currentNumber);
+        createLuckyNumber(19,120);
+        randomizeCrystals();
+    }
 })
 
 $('#c3').on('click', () => {
     currentNumber = currentNumber+c3;
     $('#current').text(currentNumber);
+    if (currentNumber == luckyNumber){
+        victories=victories+1;
+        $('#wins').text('Wins: '+victories);
+        currentNumber=0;
+        $('#current').text(currentNumber);
+        createLuckyNumber(19,120);
+        randomizeCrystals();
+    }
+    
+    else if(currentNumber > luckyNumber){
+        defeats = defeats+1;
+        $('#losses').text('Losses: '+defeats);
+        currentNumber=0;
+        $('#current').text(currentNumber);
+        createLuckyNumber(19,120);
+        randomizeCrystals();
+    }
 })
 
 $('#c4').on('click', () => {
     currentNumber = currentNumber+c4;
     $('#current').text(currentNumber);
+    if (currentNumber == luckyNumber){
+        victories=victories+1;
+        $('#wins').text('Wins: '+victories);
+        currentNumber=0;
+        $('#current').text(currentNumber);
+        createLuckyNumber(19,120);
+        randomizeCrystals();
+    }
+    
+    else if(currentNumber > luckyNumber){
+        defeats = defeats+1;
+        $('#losses').text('Losses: '+defeats);
+        currentNumber=0;
+        $('#current').text(currentNumber);
+        createLuckyNumber(19,120);
+        randomizeCrystals();
+    }
 })
 
-if (currentNumber == luckyNumber){
-    victories=victories+1;
-    $('#wins').text('Wins: '+victories);
-}
 
-else if(currentNumber > luckyNumber){
-    defeats = defeats+1;
-    $('#losses').text('Losses: '+defeats);
-}
+
 
 })
