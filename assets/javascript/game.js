@@ -73,7 +73,7 @@ $('#c2').on('click', () => {
         $('#current').text(currentNumber);
         createLuckyNumber(19,120);
         randomizeCrystals();
-    }
+        }
 })
 
 $('#c3').on('click', () => {
