@@ -55,33 +55,29 @@ $('#current').text(currentNumber);
 $('#c1').on('click', () => {
     currentNumber = currentNumber+c1; //adds crystals value to current total
     $('#current').text(currentNumber); //displays new current total
-    winOrLose()
+    winOrLose();
    
 })
 
 $('#c2').on('click', () => {
     currentNumber = currentNumber+c2;
     $('#current').text(currentNumber);
-    winOrLose()
+    winOrLose();
     
 })
 
 $('#c3').on('click', () => {
     currentNumber = currentNumber+c3;
     $('#current').text(currentNumber);
-    winOrLose()
+    winOrLose();
   
 })
 
 $('#c4').on('click', () => {
     currentNumber = currentNumber+c4;
     $('#current').text(currentNumber);
-    winOrLose()
+    winOrLose();
     
 })
-
-
-
-
 
 })
