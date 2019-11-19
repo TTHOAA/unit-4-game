@@ -5,8 +5,6 @@ let defeats= 0;
 $('#wins').append(victories);
 $('#losses').append(defeats);
 
-
-
 let luckyNumber;
 function createLuckyNumber(min,max) { //function creates a random number between and including the min and max values
     luckyNumber = Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -26,6 +24,11 @@ function randomizeCrystals(){ //function assigns each crystal a random value fro
     c3= Math.floor((Math.random()*12)+1);
     c4= Math.floor((Math.random()*12)+1);
     console.log(c1 , c2 , c3 , c4)
+
+    $('#c1').data('value',c1); //gives crystals an attribute, 'value', that hold their respective random values
+    $('#c2').data('value',c2);
+    $('#c3').data('value',c3);
+    $('#c4').data('value',c4);
 }
 
 randomizeCrystals();
@@ -52,32 +55,12 @@ function winOrLose(){
 
 let currentNumber = 0;
 $('#current').text(currentNumber);
-$('#c1').on('click', () => {
-    currentNumber = currentNumber+c1; //adds crystals value to current total
+$('.crystal').on('click', (event) => {
+    let crystal = $(event.currentTarget).data('value'); //sets crystal to equal the value of the crystal that has been clicked
+    currentNumber = currentNumber+crystal; //adds crystals value to current total
     $('#current').text(currentNumber); //displays new current total
     winOrLose();
    
-})
-
-$('#c2').on('click', () => {
-    currentNumber = currentNumber+c2;
-    $('#current').text(currentNumber);
-    winOrLose();
-    
-})
-
-$('#c3').on('click', () => {
-    currentNumber = currentNumber+c3;
-    $('#current').text(currentNumber);
-    winOrLose();
-  
-})
-
-$('#c4').on('click', () => {
-    currentNumber = currentNumber+c4;
-    $('#current').text(currentNumber);
-    winOrLose();
-    
 })
 
 })
